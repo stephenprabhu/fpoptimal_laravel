@@ -1,18 +1,11 @@
 <?php
 
+use App\Http\Controllers\FPController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/check_fingerprint', [FPController::class, 'checkFingerprint']);
+Route::post('/finishPage', [FPController::class, 'finishPage']);
+Route::post('/getCookie', [FPController::class, 'getCookie']);
+Route::post('/check_exist_picture', [FPController::class, 'checkExistPicture']);
+Route::post('/pictures', [FPController::class, 'storePictures']);
+Route::post('/updateFeatures', [FPController::class, 'updateFeatures']);
