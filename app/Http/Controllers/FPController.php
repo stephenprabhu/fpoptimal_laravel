@@ -224,6 +224,4 @@ class FPController extends Controller
         // Regenerate the fingerprint after updating the features
         return $this->genFingerprint($uniqueLabel);
     }
-
-
 }
